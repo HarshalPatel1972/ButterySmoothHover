@@ -47,6 +47,19 @@ window.onmouseup = (e) => handleOnUp(e);
 
 window.ontouchend = (e) => handleOnUp(e.touches[0]);
 
-window.onmousemove = (e) => handleOnMove(e);
+const cursor = document.getElementById("custom-cursor");
+
+window.onmousemove = (e) => {
+  handleOnMove(e);
+  
+  cursor.animate(
+    {
+      left: `${e.clientX}px`,
+      top: `${e.clientY}px`,
+    },
+    { duration: 500, fill: "forwards" }
+  );
+};
 
 window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+
