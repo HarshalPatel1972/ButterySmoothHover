@@ -61,5 +61,19 @@ window.onmousemove = (e) => {
   );
 };
 
-window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+// Cursor Hover Effects
+document.querySelectorAll(".image-card").forEach((card) => {
+  card.onmouseenter = () => {
+    cursor.style.width = "60px";
+    cursor.style.height = "60px";
+    document.getElementById("cursor-text").style.opacity = "1";
+  };
+  
+  card.onmouseleave = () => {
+    cursor.style.width = "20px";
+    cursor.style.height = "20px";
+    document.getElementById("cursor-text").style.opacity = "0";
+  };
+});
+
 
