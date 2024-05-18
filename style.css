@@ -51,15 +51,21 @@ body {
   transition: width 0.3s ease, height 0.3s ease;
 }
 
-#cursor-text {
-  font-family: system-ui, sans-serif;
-  font-size: 6px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: black;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+#particles-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, white, transparent);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
 
 
