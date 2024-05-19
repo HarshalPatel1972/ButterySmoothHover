@@ -1,6 +1,20 @@
 const track = document.getElementById("image-track");
 
+const initParticles = () => {
+  const container = document.getElementById("particles-container");
+  for (let i = 0; i < 15; i++) {
+    const particle = document.createElement("div");
+    particle.className = "particle";
+    particle.style.left = `${Math.random() * 100}vw`;
+    particle.style.top = `${Math.random() * 100}vh`;
+    container.appendChild(particle);
+  }
+};
+
+initParticles();
+
 const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+
 
 const handleOnUp = () => {
   track.dataset.mouseDownAt = "0";
