@@ -34,7 +34,19 @@ const handleOnMove = (e) => {
 
   track.dataset.percentage = nextPercentage;
 
+  // Kinetic Background
+  const titleBg = document.getElementById("title-bg");
+  if (titleBg) {
+    titleBg.animate(
+      {
+        transform: `translate(${-50 + percentage * 0.05}%, -50%)`,
+      },
+      { duration: 1200, fill: "forwards" }
+    );
+  }
+
   track.animate(
+
     {
       transform: `translate(${nextPercentage}%, -50%)`,
     },
