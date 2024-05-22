@@ -1,3 +1,18 @@
+:root {
+  --obsidian: #020617;
+  --glass: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --glow: rgba(139, 92, 246, 0.4);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--obsidian);
+  margin: 0rem;
+  overflow: hidden;
+}
+
 body::after {
   content: "";
   position: fixed;
@@ -23,24 +38,30 @@ body::after {
   100% { transform: translate(5%,0) }
 }
 
-
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--obsidian);
-  margin: 0rem;
-  overflow: hidden;
+#title-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25vw;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+  z-index: 0;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-
 
 #image-track {
   display: flex;
-  gap: 4vmin;
+  gap: 5vmin;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(0%, -50%);
-  user-select: none; /* -- Prevent image highlighting -- */
+  user-select: none;
+  z-index: 2;
 }
 
 #image-track > .image-card {
@@ -49,10 +70,28 @@ body {
   background-color: var(--glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   overflow: hidden;
   position: relative;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#image-track > .image-card > .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% center;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#image-track > .image-card:hover {
+  transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+#image-track > .image-card:hover > .image {
+  transform: scale(1.1);
 }
 
 #custom-cursor {
@@ -70,6 +109,17 @@ body {
   transition: width 0.3s ease, height 0.3s ease;
 }
 
+#cursor-text {
+  font-family: system-ui, sans-serif;
+  font-size: 6px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 #particles-container {
   position: fixed;
   inset: 0;
@@ -77,21 +127,11 @@ body {
   z-index: 1;
 }
 
-#title-bg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 25vw;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
-  z-index: 0;
-  pointer-events: none;
-  letter-spacing: -0.05em;
-  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, white, transparent);
+  border-radius: 50%;
+  opacity: 0.3;
 }
-
-
-
-
