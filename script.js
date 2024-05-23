@@ -45,7 +45,14 @@ const handleOnMove = (e) => {
     );
   }
 
+  // Update Progress Bar
+  const progressFill = document.getElementById("progress-bar-fill");
+  if (progressFill) {
+    progressFill.style.width = `${Math.abs(percentage)}%`;
+  }
+
   track.animate(
+
 
     {
       transform: `translate(${nextPercentage}%, -50%)`,
