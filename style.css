@@ -127,6 +127,12 @@ body::after {
   z-index: 1;
 }
 
+@keyframes breathe {
+  0% { opacity: 0.3; transform: translateX(-50%) scaleX(1); }
+  50% { opacity: 0.6; transform: translateX(-50%) scaleX(1.02); }
+  100% { opacity: 0.3; transform: translateX(-50%) scaleX(1); }
+}
+
 #progress-bar {
   position: fixed;
   bottom: 50px;
@@ -138,7 +144,9 @@ body::after {
   border-radius: 1px;
   overflow: hidden;
   z-index: 1000;
+  animation: breathe 4s infinite ease-in-out;
 }
+
 
 #progress-bar-fill {
   width: 0%;
