@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <svg style="display: none;">
+      <defs>
+        <filter id="liquid">
+          <feTurbulence baseFrequency="0.01" numOctaves="3" result="noise" seed="2" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" />
+        </filter>
+      </defs>
+    </svg>
+
     <div id="title-bg">CELESTIAL</div>
     <div id="particles-container"></div>
-
     
     <div id="custom-cursor">
-
       <span id="cursor-text">View</span>
     </div>
 
@@ -21,8 +28,6 @@
     </div>
 
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-
-
       <img
         class="image"
         src="https://images.unsplash.com/photo-1625580917212-e86139d26e1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -30,109 +35,87 @@
       />
       <img
         class="image"
-        src="https://images.unsplash.com/photo-1634698813343-e2b78707c06b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHJhZGhhJTIwYW5kJTIwa3Jpc2huYXxlbnwwfHwwfHx8MA%3D%3D"
+        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
       <img
         class="image"
-        src="https://images.unsplash.com/photo-1609133799670-2c2a82f3624c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHJhZGhhJTIwYW5kJTIwa3Jpc2huYXxlbnwwfHwwfHx8MA%3D%3D"
+        src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
-
       <img
         class="image"
-        src="https://images.unsplash.com/photo-1631689644455-b570154363e2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJhZGhhJTIwYW5kJTIwa3Jpc2huYXxlbnwwfHwwfHx8MA%3D%3D"
+        src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
-
       <img
         class="image"
-        src="https://images.unsplash.com/photo-1629639083646-9120347a4ff8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHJhZGhhJTIwYW5kJTIwa3Jpc2huYXxlbnwwfHwwfHx8MA%3D%3D"
+        src="https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
-
       <img
         class="image"
-        src="https://plus.unsplash.com/premium_photo-1674898515636-72d46dff9373?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHJhZGhhJTIwYW5kJTIwa3Jpc2huYXxlbnwwfHwwfHx8MA%3D%3D"
+        src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
-
       <img
         class="image"
-        src="https://images.unsplash.com/photo-1590228947699-5f1fa1d86458?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFkaGElMjBhbmQlMjBrcmlzaG5hfGVufDB8fDB8fHww"
+        src="https://images.unsplash.com/photo-1633167606207-d843b3ee40f7?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
-
       <img
         class="image"
-        src="https://images.unsplash.com/photo-1625580916836-1badf2c15b32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFkaGElMjBhbmQlMjBrcmlzaG5hfGVufDB8fDB8fHww"
+        src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
     </div>
 
     <script src="script.js"></script>
+    <!-- April 21 Commit 1 -->
+    <!-- April 21 Commit 2 -->
+    <!-- April 21 Commit 3 -->
+    <!-- April 22 Commit 1 -->
+    <!-- April 22 Commit 2 -->
+    <!-- April 22 Commit 3 -->
+    <!-- April 22 Commit 4 -->
+    <!-- April 23 Commit 1 -->
+    <!-- April 23 Commit 2 -->
+    <!-- April 24 Commit 1 -->
+    <!-- April 24 Commit 2 -->
+    <!-- April 25 Commit 1 -->
+    <!-- April 25 Commit 2 -->
+    <!-- April 25 Commit 3 -->
+    <!-- April 25 Commit 4 -->
+    <!-- April 26 Commit 1 -->
+    <!-- April 26 Commit 2 -->
+    <!-- April 26 Commit 3 -->
+    <!-- April 27 Commit 1 -->
+    <!-- April 27 Commit 2 -->
+    <!-- April 27 Commit 3 -->
+    <!-- April 27 Commit 4 -->
+    <!-- April 27 Commit 5 -->
+    <!-- April 28 Commit 1 -->
+    <!-- April 28 Commit 2 -->
+    <!-- April 28 Commit 3 -->
+    <!-- April 29 Commit 1 -->
+    <!-- April 29 Commit 2 -->
+    <!-- April 30 Commit 1 -->
+    <!-- April 30 Commit 2 -->
+    <!-- April 30 Commit 3 -->
+    <!-- May 1 Commit 1 -->
+    <!-- May 1 Commit 2 -->
+    <!-- May 2 Commit 1 -->
+    <!-- May 2 Commit 2 -->
+    <!-- May 2 Commit 3 -->
+    <!-- May 3 Commit 1 -->
+    <!-- May 3 Commit 2 -->
+    <!-- May 3 Commit 3 -->
+    <!-- May 4 Commit 1 -->
+    <!-- May 4 Commit 2 -->
+    <!-- May 4 Commit 3 -->
+    <!-- May 4 Commit 4 -->
+    <!-- May 4 Commit 5 -->
+    <!-- May 5 Commit 1 -->
+    <!-- May 5 Commit 2 -->
   </body>
 </html>
-
-<!-- April 21 Commit 1 -->
-<!-- April 21 Commit 2 -->
-<!-- April 21 Commit 3 -->
-<!-- April 22 Commit 1 -->
-<!-- April 22 Commit 2 -->
-<!-- April 22 Commit 3 -->
-<!-- April 22 Commit 4 -->
-<!-- April 23 Commit 1 -->
-<!-- April 23 Commit 2 -->
-<!-- April 24 Commit 1 -->
-<!-- April 24 Commit 2 -->
-<!-- April 25 Commit 1 -->
-<!-- April 25 Commit 2 -->
-<!-- April 21 Commit 1 -->
-<!-- April 21 Commit 2 -->
-<!-- April 21 Commit 3 -->
-<!-- April 22 Commit 1 -->
-<!-- April 22 Commit 2 -->
-<!-- April 23 Commit 1 -->
-<!-- April 23 Commit 2 -->
-<!-- April 23 Commit 3 -->
-<!-- April 23 Commit 4 -->
-<!-- April 23 Commit 5 -->
-<!-- April 24 Commit 1 -->
-<!-- April 24 Commit 2 -->
-<!-- April 24 Commit 3 -->
-<!-- April 24 Commit 4 -->
-<!-- April 25 Commit 1 -->
-<!-- April 25 Commit 2 -->
-<!-- April 25 Commit 3 -->
-<!-- April 25 Commit 4 -->
-<!-- April 26 Commit 1 -->
-<!-- April 26 Commit 2 -->
-<!-- April 26 Commit 3 -->
-<!-- April 27 Commit 1 -->
-<!-- April 27 Commit 2 -->
-<!-- April 27 Commit 3 -->
-<!-- April 27 Commit 4 -->
-<!-- April 27 Commit 5 -->
-<!-- April 28 Commit 1 -->
-<!-- April 28 Commit 2 -->
-<!-- April 28 Commit 3 -->
-<!-- April 29 Commit 1 -->
-<!-- April 29 Commit 2 -->
-<!-- April 30 Commit 1 -->
-<!-- April 30 Commit 2 -->
-<!-- April 30 Commit 3 -->
-<!-- May 1 Commit 1 -->
-<!-- May 1 Commit 2 -->
-<!-- May 2 Commit 1 -->
-<!-- May 2 Commit 2 -->
-<!-- May 2 Commit 3 -->
-<!-- May 3 Commit 1 -->
-<!-- May 3 Commit 2 -->
-<!-- May 3 Commit 3 -->
-<!-- May 4 Commit 1 -->
-<!-- May 4 Commit 2 -->
-<!-- May 4 Commit 3 -->
-<!-- May 4 Commit 4 -->
-<!-- May 4 Commit 5 -->
-<!-- May 5 Commit 1 -->
-<!-- May 5 Commit 2 -->
