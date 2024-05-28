@@ -51,7 +51,15 @@ const handleOnMove = (e) => {
     progressFill.style.width = `${Math.abs(percentage)}%`;
   }
 
+  // Liquid Distortion
+  const displacementMap = document.querySelector("feDisplacementMap");
+  if (displacementMap) {
+    const warpScale = Math.min(Math.abs(mouseDelta * 0.1), 50);
+    displacementMap.setAttribute("scale", warpScale);
+  }
+
   track.animate(
+
 
 
     {
