@@ -19,7 +19,14 @@ const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
 const handleOnUp = () => {
   track.dataset.mouseDownAt = "0";
   track.dataset.prevPercentage = track.dataset.percentage;
+  
+  // Reset Liquid Scale
+  const displacementMap = document.querySelector("feDisplacementMap");
+  if (displacementMap) {
+    displacementMap.setAttribute("scale", "0");
+  }
 };
+
 
 const handleOnMove = (e) => {
   if (track.dataset.mouseDownAt === "0") return;
