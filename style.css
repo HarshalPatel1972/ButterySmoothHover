@@ -22,7 +22,6 @@ body::before {
   pointer-events: none;
 }
 
-
 body::after {
   content: "";
   position: fixed;
@@ -87,7 +86,6 @@ body::after {
   filter: url(#liquid);
 }
 
-
 #image-track > .image-card > .image {
   width: 100%;
   height: 100%;
@@ -139,6 +137,15 @@ body::after {
   z-index: 1;
 }
 
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, white, transparent);
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
 @keyframes breathe {
   0% { opacity: 0.3; transform: translateX(-50%) scaleX(1); }
   50% { opacity: 0.6; transform: translateX(-50%) scaleX(1.02); }
@@ -159,7 +166,6 @@ body::after {
   animation: breathe 4s infinite ease-in-out;
 }
 
-
 #progress-bar-fill {
   width: 0%;
   height: 100%;
@@ -168,3 +174,43 @@ body::after {
   transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+#theme-toggle {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 50px;
+  height: 24px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  transition: background 0.3s ease;
+}
+
+#theme-toggle-dot {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+body.light-mode {
+  --obsidian: #f8fafc;
+  --glass: rgba(0, 0, 0, 0.05);
+  --border: rgba(0, 0, 0, 0.1);
+  --glow: rgba(59, 130, 246, 0.4);
+}
+
+body.light-mode #title-bg {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #theme-toggle-dot {
+  transform: translateX(26px);
+  background: #020617;
+}
