@@ -66,9 +66,6 @@ const handleOnMove = (e) => {
   }
 
   track.animate(
-
-
-
     {
       transform: `translate(${nextPercentage}%, -50%)`,
     },
@@ -88,6 +85,14 @@ const handleOnMove = (e) => {
 /* -- Had to add extra lines for touch events -- */
 
 window.onmousedown = (e) => handleOnDown(e);
+
+// Theme Toggle
+const themeToggle = document.getElementById("theme-toggle");
+if (themeToggle) {
+  themeToggle.onclick = () => {
+    document.body.classList.toggle("light-mode");
+  };
+}
 
 window.ontouchstart = (e) => handleOnDown(e.touches[0]);
 
@@ -109,6 +114,8 @@ window.onmousemove = (e) => {
   );
 };
 
+window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+
 // Cursor Hover Effects
 document.querySelectorAll(".image-card").forEach((card) => {
   card.onmouseenter = () => {
@@ -123,5 +130,3 @@ document.querySelectorAll(".image-card").forEach((card) => {
     document.getElementById("cursor-text").style.opacity = "0";
   };
 });
-
-
