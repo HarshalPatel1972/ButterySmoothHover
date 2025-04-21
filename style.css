@@ -100,6 +100,28 @@ body::after {
   border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
+#image-track > .image-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+#image-track > .image-card:hover::after {
+  left: 150%;
+}
+
 #image-track > .image-card:hover > .image {
   transform: scale(1.1);
 }
