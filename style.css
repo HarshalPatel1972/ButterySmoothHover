@@ -11,6 +11,7 @@ body {
   background-color: var(--obsidian);
   margin: 0rem;
   overflow: hidden;
+  perspective: 1000px;
 }
 
 body::before {

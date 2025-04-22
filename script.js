@@ -117,6 +117,13 @@ window.onmousemove = (e) => {
   handleOnMove(e);
   mouseX = e.clientX;
   mouseY = e.clientY;
+  
+  // 3D Track Tilt
+  const xOffset = (e.clientX / window.innerWidth - 0.5) * 10;
+  const yOffset = (e.clientY / window.innerHeight - 0.5) * 10;
+  track.animate({
+    transform: `translate(${track.dataset.percentage || 0}%, -50%) rotateX(${-yOffset}deg) rotateY(${xOffset}deg)`
+  }, { duration: 1200, fill: "forwards" });
 };
 
 const animateCursor = () => {
