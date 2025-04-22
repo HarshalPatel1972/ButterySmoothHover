@@ -18,7 +18,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, transparent 20%, black 150%);
+  background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.4) 150%);
   z-index: 100;
   pointer-events: none;
 }
