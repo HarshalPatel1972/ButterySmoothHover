@@ -2,11 +2,18 @@ const track = document.getElementById("image-track");
 
 const initParticles = () => {
   const container = document.getElementById("particles-container");
-  for (let i = 0; i < 15; i++) {
+  const colors = ["#8b5cf6", "#3b82f6", "#ffffff"];
+  for (let i = 0; i < 40; i++) {
     const particle = document.createElement("div");
     particle.className = "particle";
+    const size = Math.random() * 3 + 1;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
     particle.style.left = `${Math.random() * 100}vw`;
     particle.style.top = `${Math.random() * 100}vh`;
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.setProperty("--duration", `${Math.random() * 10 + 10}s`);
+    particle.style.setProperty("--opacity", `${Math.random() * 0.4 + 0.1}`);
     container.appendChild(particle);
   }
 };
