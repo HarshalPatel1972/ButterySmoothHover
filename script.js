@@ -65,6 +65,21 @@ const handleOnMove = (e) => {
     progressFill.style.width = `${Math.abs(percentage)}%`;
   }
 
+  const progressBar = document.getElementById("progress-bar");
+  if (progressBar) {
+    progressBar.onclick = (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const newPercentage = (clickX / rect.width) * -100;
+      track.dataset.prevPercentage = newPercentage;
+      track.dataset.percentage = newPercentage;
+      
+      track.animate({
+        transform: `translate(${newPercentage}%, -50%)`
+      }, { duration: 1200, fill: "forwards" });
+    };
+  }
+
   // Liquid Distortion
   const displacementMap = document.querySelector("feDisplacementMap");
   if (displacementMap) {
