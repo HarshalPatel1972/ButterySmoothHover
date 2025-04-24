@@ -139,6 +139,16 @@ window.onmousemove = (e) => {
   track.animate({
     transform: `translate(${track.dataset.percentage || 0}%, -50%) rotateX(${-yOffset}deg) rotateY(${xOffset}deg)`
   }, { duration: 1200, fill: "forwards" });
+
+  // Title Warp
+  const titleBg = document.getElementById("title-bg");
+  if (titleBg) {
+    const tx = (e.clientX / window.innerWidth - 0.5) * 50;
+    const ty = (e.clientY / window.innerHeight - 0.5) * 50;
+    titleBg.animate({
+      transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px))`
+    }, { duration: 2000, fill: "forwards" });
+  }
 };
 
 const animateCursor = () => {
