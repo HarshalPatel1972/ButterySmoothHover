@@ -170,14 +170,29 @@ window.ontouchmove = (e) => handleOnMove(e.touches[0]);
 // Cursor Hover Effects
 document.querySelectorAll(".image-card").forEach((card) => {
   card.onmouseenter = () => {
-    cursor.style.width = "60px";
-    cursor.style.height = "60px";
+    cursor.style.width = "80px";
+    cursor.style.height = "80px";
+    cursor.style.backgroundColor = "white";
     document.getElementById("cursor-text").style.opacity = "1";
+  };
+  
+  card.onmousemove = (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    card.animate({
+      transform: `rotateX(${-y / 10}deg) rotateY(${x / 10}deg) scale(1.05) translate(${x / 20}px, ${y / 20}px)`
+    }, { duration: 400, fill: "forwards" });
   };
   
   card.onmouseleave = () => {
     cursor.style.width = "20px";
     cursor.style.height = "20px";
     document.getElementById("cursor-text").style.opacity = "0";
+    
+    card.animate({
+      transform: `rotateX(0deg) rotateY(0deg) scale(1) translate(0px, 0px)`
+    }, { duration: 400, fill: "forwards" });
   };
 });
