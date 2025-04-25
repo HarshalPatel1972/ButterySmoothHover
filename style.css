@@ -224,6 +224,26 @@ body::after {
   animation: breathe 4s infinite ease-in-out;
 }
 
+#starfield {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 50px 160px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 80px 120px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 110px 210px, white, rgba(0,0,0,0));
+  background-size: 200px 200px;
+  opacity: 0.1;
+  z-index: -1;
+  animation: starfieldScroll 100s linear infinite;
+}
+
+@keyframes starfieldScroll {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
 #progress-bar-fill {
   width: 0%;
   height: 100%;
