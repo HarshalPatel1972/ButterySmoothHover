@@ -173,14 +173,15 @@ body::after {
 }
 
 #cursor-text {
-  font-family: "Inter", sans-serif;
-  font-size: 6px;
-  font-weight: 900;
+  font-family: "Outfit", sans-serif;
+  font-size: 8px;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   color: black;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
 }
 
 #particles-container {
