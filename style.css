@@ -124,9 +124,8 @@ body::after {
 }
 
 #image-track > .image-card:hover {
-  transform: rotateX(5deg) rotateY(5deg) scale(1.05);
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 20px 80px rgba(139, 92, 246, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #image-track > .image-card::after {
