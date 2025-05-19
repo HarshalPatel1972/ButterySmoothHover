@@ -103,8 +103,8 @@ body::after {
 }
 
 #image-track > .image-card {
-  width: 40vmin;
-  height: 56vmin;
+  width: 25vmin;
+  height: 35vmin;
   background-color: var(--glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
